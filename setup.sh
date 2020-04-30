@@ -1,5 +1,6 @@
 image_version=`date +%Y%m%d%H%M`;
 echo $image_version;
+#这一步很关键 切换目录
 cd Jenkins2Docker
 git pull --rebase origin master;
 docker stop jenkins2docker;
