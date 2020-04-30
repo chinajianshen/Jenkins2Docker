@@ -14,8 +14,8 @@ EXPOSE 80
 #FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /src
-COPY ["Jenkins2Docker/Jenkins2Docker.csproj", "Jenkins2Docker/"]
-RUN dotnet restore "Jenkins2Docker/Jenkins2Docker.csproj"
+COPY ["Jenkins2Docker.csproj", "Jenkins2Docker/"]
+RUN dotnet restore "Jenkins2Docker.csproj"
 
 #复制文件到工作目录
 COPY . .
