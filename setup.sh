@@ -4,7 +4,7 @@ echo $image_version;
 git pull --rebase origin master;
 docker stop jenkins2docker;
 docker rm jenkins2docker;
-docker build -t jenkins2docker:$image_version .;
+docker build -f ./Jenkins2Docker/Dockerfile -t jenkins2docker:$image_version .;
 docker images;
 docker run -p 10001:80 -d --name jenkins2docker jenkins2docker:$image_version;
 # -v ~/docker-data/house-web/appsettings.json:/app/appsettings.json -v ~/docker-data/house-web/NLogFile/:/app/NLogFile   --restart=always
